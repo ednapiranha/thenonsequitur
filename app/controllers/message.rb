@@ -5,15 +5,30 @@ get "/stylesheets/main.css" do
 end
 
 get '/index/' do
-	Message.delete_all
 	@messages = Message.sort(:created_at.desc).all
 	haml :index
 end
 
 post '/create' do
 	if params[:email].blank?
-		@message = Message.create(:body => params[:body], :ip => request.env['REMOTE_ADDR'])
+		body = []
+		tags = []
+		params[:body].to_s.split(/\s/).each { |w| 
+			tags << clean(w)
+			is_valid(w) ? body << "<a href='/tags/#{clean(w)}'>#{soft_clean(w)}</a>" : body << soft_clean(w)
+		}.join(" ")
+		@message = Message.create(:body => body.join(" "), :ip => request.env['REMOTE_ADDR'], :tags => tags)
 	end
 	@messages = Message.sort(:created_at.desc).all
+	haml :index
+end
+
+get '/delete' do
+	Message.delete_all
+	redirect '/'
+end
+
+get '/tags/:word' do
+	@messages = Message.where(:tags => params[:word].to_s.downcase).sort(:created_at.desc).all
 	haml :index
 end

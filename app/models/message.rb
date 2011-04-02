@@ -3,5 +3,7 @@ class Message
   
   key :body, String, :required => true
 	key :ip, String
+	key :tags, Array
 	timestamps!
+	
 end

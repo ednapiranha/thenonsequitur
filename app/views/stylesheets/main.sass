@@ -13,7 +13,7 @@ body
   .message_block
     background-image: url('/images/back.jpg')
     color: #eee
-    font-size: 12px
+    font-size: 14px
     display: block
     float: left
     padding: 10px
@@ -21,6 +21,14 @@ body
     border-radius: 5px
     -moz-border-radius: 5px
     max-width: 200px
+    
+    a
+      color: #eee
+      text-decoration: none
+      border-bottom: 5px solid transparent
+      
+      &:hover
+        border-bottom: 5px solid #fff
   
   form
     input[name="body"] 
