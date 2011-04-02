@@ -1,0 +1,10 @@
+%h1 The Non Sequitur
+
+%form{ :method => "post", :action => "/create" }
+  %input{ :type => "text", :name => "body" }
+  %input{ :type => "text", :name => "email" }
+  %input{ :type => "submit", :value => "save" }
+  
+- @messages.each do |message|  
+  .message_block
+    = message.body
