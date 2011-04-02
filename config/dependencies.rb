@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'yaml'
+require 'haml'
 
 module Sinatra
   module Dependencies

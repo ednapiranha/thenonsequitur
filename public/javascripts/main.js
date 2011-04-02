@@ -20,4 +20,6 @@ $(function() {
   var message_field = $('input[name="body"]');
 	$('input[name="email"]').hide();
 	message_field.focus();
+	
+	$('h1').click(function() { document.location.href = '/' }); 
 });
