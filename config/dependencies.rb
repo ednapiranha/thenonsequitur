@@ -53,7 +53,7 @@ module Sinatra
       else
         begin
           puts "== ORM selected: #{orm_name}"
-          require "./config/orms/#{orm_name}" 
+          require File.dirname(__FILE__) + "/orms/#{orm_name}" 
         rescue LoadError
           puts "Could not find an ORM extention in config/orms for '#{orm_name}'"
           exit 0

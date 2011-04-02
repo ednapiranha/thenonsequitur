@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
 gem 'sinatra'
 gem 'i18n'
-gem 'yaml'
 gem 'bson_ext'
+gem 'mongo_mapper'
