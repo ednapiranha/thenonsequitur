@@ -59,6 +59,6 @@ get '/tags/:word' do
 end
 
 get '/popular' do
-	@tags = Tag.sort(:total_count.desc).limit(100).all
+	@tags = Tag.where(:total_count.gt => 5).sort(:total_count.desc).limit(100).all
 	haml :popular
 end
