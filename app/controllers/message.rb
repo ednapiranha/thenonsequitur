@@ -16,7 +16,9 @@ post '/create' do
 		params[:body].to_s.split(/\s/).each { |w| 
 			tags << clean(w)
 			tag = Tag.first(:name => clean(w))
-			tag.blank? and is_valid(w) ? Tag.create(:name => clean(w)) : tag.update_attributes({ :total_count => tag.total_count + 1 })
+			if is_valid(w)
+				tag.blank? ? Tag.create(:name => clean(w)) : tag.update_attributes({ :total_count => tag.total_count + 1 })
+			end
 			is_valid(w) ? body << "<a href='/tags/#{clean(w)}'>#{soft_clean(w)}</a>" : body << soft_clean(w)
 		}.join(" ")
 
