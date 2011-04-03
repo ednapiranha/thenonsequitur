@@ -38,6 +38,12 @@ get '/post/:id' do
 	haml :index
 end
 
+get '/tagfix' do
+	@tags = Tag.all
+	@tags.each { |t| t.destroy if !is_valid(t.name) }
+
+end
+
 get '/tags/:word' do
 	@messages = Message.where(:tags => params[:word].to_s.downcase).sort(:created_at.desc).all
 	haml :index
