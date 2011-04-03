@@ -25,13 +25,13 @@ post '/create' do
 	@messages = Message.sort(:created_at.desc).limit(100).all
 	haml :index
 end
-
+=begin
 get '/delete' do
 	Message.delete_all
 	Tag.delete_all
 	redirect '/'
 end
-
+=end
 get '/tags/:word' do
 	@messages = Message.where(:tags => params[:word].to_s.downcase).sort(:created_at.desc).all
 	haml :index
