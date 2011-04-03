@@ -16,11 +16,15 @@ module Sinatra
 		end
 		
 		def soft_clean(w)
-			w.to_s.gsub(/<|>/, '')
+			w.to_s.gsub(/<|>/, ' ')
 		end
 		
 		def is_valid(w)
-			clean(w).length > 2
+			clean(w).length > 2 and !clean(w).match(/(this)|(there)|(their)|(and)|(was)|(has)|(had)|(have)|(but)|(wasnt)|(hasnt)|(would)|(wouldnt)|(where)|(here)|(theyre)|(are)|(they)/)
+		end
+		
+		def tag_size(tag)
+			Math::log10(tag.total_count) * 10
 		end
 	end
 	

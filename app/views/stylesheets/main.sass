@@ -1,41 +1,65 @@
+$pink: #ba1c63
+
 body
   font-family: Arial, sans-serif
+  color: #111
+  padding: 0px
+  margin: 0px
+  background-color: #fff
+
+  a
+    color: $pink
+    text-decoration: none
 
   h1
-    background-image: url('/images/logo.png')
-    background-repeat: no-repeat
-    height: 50px
-    width: 390px
-    font-size: 1px
-    text-indent: -9999px
+    color: #fff
+    font-weight: normal
+    background-color: #a4a4a4
+    margin-bottom: 5px
+    font-size: 28px
+    margin-top: 0px
+    text-transform: lowercase
     cursor: pointer
   
   .message_block
-    background-image: url('/images/back.jpg')
-    color: #d3d3d3
-    line-height: 18px
-    font-size: 15px
+    line-height: 21px
+    border: 1px solid #ccc
+    font-size: 16px
     display: block
     float: left
     padding: 10px
     margin: 5px
-    border-radius: 5px
-    -moz-border-radius: 5px
-    max-width: 200px
-    opacity: 0.9
+    max-width: 250px
+    
+    span
+      font-size: 35px
+      color: #cfa6b7
+      font-family: Georgia, serif
     
     a
-      color: #eee
-      text-decoration: none
-      border-bottom: 5px solid transparent
+      background-color: #eee
+      color: #111
       
       &:hover
-        border-bottom: 5px solid #111
+        background-color: #e0367e
+        color: #fff
   
-  form
-    input[name="body"] 
-      margin-top: 10px
-      margin-bottom: 10px
-      width: 70%
-      font-size: 15px
-      padding: 5px 
+  .wrapper
+    padding: 5px
+    form
+      input[name="body"] 
+        border: 1px solid #111
+        outline: none
+        margin-top: 10px
+        margin-bottom: 10px
+        width: 93%
+        color: #547a94
+        font-size: 20px
+        padding: 5px 
+      
+      input[type="submit"]
+        background-color: $pink
+        color: #fff
+        border: 0px
+        font-size: 15px
+        padding: 5px

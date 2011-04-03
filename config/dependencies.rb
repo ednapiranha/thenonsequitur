@@ -65,7 +65,7 @@ module Sinatra
       load 'config/configures.rb'
       load "config/default_routes.rb"
   
-      # Load models, controllers an helpers
+      # Load models, controllers and helpers
       Dir.glob("app/controllers/**/*.rb") {|file| load file}
       Dir.glob("app/models/**/*.rb") {|file| load file}
       Dir.glob("app/helpers/**/*.rb") {|file| load file}

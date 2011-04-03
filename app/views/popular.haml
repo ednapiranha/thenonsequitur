@@ -1,0 +1,5 @@
+%h1 The Non Sequitur
+
+- @tags.each do |tag|  
+  .message_block
+    = "<a href=/tags/#{tag.name} style='font-size: #{tag_size(tag)}px;'>#{tag.name} #{tag.total_count}</a>"
