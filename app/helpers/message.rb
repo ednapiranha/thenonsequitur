@@ -24,7 +24,7 @@ module Sinatra
 		end
 		
 		def tag_size(tag)
-			Math::log10(tag.total_count) * 10
+			Math::log10(tag.total_count) * 20
 		end
 	end
 	
