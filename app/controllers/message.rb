@@ -41,7 +41,6 @@ end
 get '/tagfix' do
 	@tags = Tag.all
 	@tags.each { |t| t.delete if !is_valid(t.name) }
-
 end
 
 get '/tags/:word' do
