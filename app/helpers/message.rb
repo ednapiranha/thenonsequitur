@@ -20,7 +20,7 @@ module Sinatra
 		end
 		
 		def is_valid(w)
-			clean(w).length > 2 and !clean(w).match(/(this|there|their|and|was|has|had|have|but|wasnt|hasnt|would|wouldnt|where|here|theyre|are|they|the|them)/)
+			clean(w).length > 2
 		end
 		
 		def tag_size(tag)
