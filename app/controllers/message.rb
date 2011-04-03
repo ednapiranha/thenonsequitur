@@ -40,7 +40,7 @@ end
 
 get '/tagfix' do
 	@tags = Tag.all
-	@tags.each { |t| t.destroy if !is_valid(t.name) }
+	@tags.each { |t| t.delete if !is_valid(t.name) }
 
 end
 
