@@ -48,6 +48,7 @@ get '/unlink/:word' do
 	@messages.each { |m| 
 		m.update_attributes({ :body => m.body.gsub(/<a href="\/tags\/#{word}">\1<\/a>/, word) })
 	}
+	redirect '/'
 end
 
 get '/tags/:word' do
