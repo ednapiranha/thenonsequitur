@@ -32,6 +32,12 @@ get '/delete' do
 	redirect '/'
 end
 =end
+
+get '/post/:id' do
+	@messages = [Message.first(:id => params[:id])]
+	haml :index
+end
+
 get '/tags/:word' do
 	@messages = Message.where(:tags => params[:word].to_s.downcase).sort(:created_at.desc).all
 	haml :index

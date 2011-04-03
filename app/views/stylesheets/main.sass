@@ -24,13 +24,30 @@ body
   
   .message_block
     line-height: 21px
+    padding: 10px
+    padding-top: 20px
     border: 1px solid #ccc
     font-size: 16px
     display: block
     float: left
-    padding: 10px
+    position: relative
     margin: 5px
     max-width: 250px
+    
+    .actions
+      position: absolute
+      right: 0px
+      top: 0px
+      margin: 0px
+      font-size: 11px
+      line-height: 12px
+      background-color: $pink
+      padding: 2px
+
+      a
+        color: #fff
+        background-color: $pink
+        font-size: 11px
     
     span
       font-size: 35px

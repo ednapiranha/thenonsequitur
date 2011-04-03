@@ -1,5 +1,3 @@
-%h1 The Non Sequitur
-
 .wrapper
   %a{ :href => "/popular" } popular tags
 
@@ -10,6 +8,8 @@
   
 - @messages.each do |message|  
   .message_block
+    .actions
+      %a{ :href => "/post/#{message.id}"} link
     %span &#147;
     = message.body
     %span &#148;
