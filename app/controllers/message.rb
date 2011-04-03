@@ -43,6 +43,13 @@ get '/tagfix' do
 	@tags.each { |t| t.delete if !is_valid(t.name) }
 end
 
+get '/unlink/:word' do
+	@messages = Message.all
+	@messages.each { |m| 
+		m.update_attributes({ :body => m.body.gsub(/<a href="\/tags\/#{word}">\1<\/a>/, word) })
+	}
+end
+
 get '/tags/:word' do
 	@messages = Message.where(:tags => params[:word].to_s.downcase).sort(:created_at.desc).all
 	haml :index
