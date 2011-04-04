@@ -67,11 +67,11 @@ get '/tags/:word' do
 end
 
 get '/popular/tags' do
-	@tags = Tag.where(:total_count.gt => 1).sort(:total_count.desc).limit(150).all
+	@tags = Tag.where(:total_count.gt => 1).sort(:total_count.desc).limit(100).all
 	haml :popular
 end
 
 get '/popular/posts' do
-	@messages = Message.sort(:vote_count.desc).limit(100).all
+	@messages = Message.where(:vote_count.gt => 1).sort(:vote_count.desc).limit(100).all
 	haml :index
 end
