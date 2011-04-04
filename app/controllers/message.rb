@@ -5,7 +5,7 @@ get "/stylesheets/main.css" do
 end
 
 get '/index/' do
-	@messages = Message.sort(:created_at.desc).limit(100).all
+	@messages = Message.sort(:created_at.desc).limit(150).all
 	haml :index
 end
 
@@ -26,7 +26,7 @@ post '/create' do
 
 		@message = Message.create(:body => body.join(" "), :ip => request.env['REMOTE_ADDR'], :tags => tags)
 	end
-	@messages = Message.sort(:created_at.desc).limit(100).all
+	@messages = Message.sort(:created_at.desc).limit(150).all
 	haml :index
 end
 =begin
@@ -67,7 +67,7 @@ get '/tags/:word' do
 end
 
 get '/popular/tags' do
-	@tags = Tag.where(:total_count.gt => 1).sort(:total_count.desc).limit(100).all
+	@tags = Tag.where(:total_count.gt => 1).sort(:total_count.desc).limit(150).all
 	haml :popular
 end
 
