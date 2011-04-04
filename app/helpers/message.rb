@@ -20,7 +20,8 @@ module Sinatra
 		end
 		
 		def is_valid(w)
-			clean(w).length > 2 and !clean(w).match(/^(this)|(there)|(their)|(and)|(was)|(has)|(had)|(have)|(but)|(wasnt)|(hasnt)|(would)|(wouldnt)|(where)|(here)|(theyre)|(are)|(they)|(the)|(them)$/)
+			words = ['this', 'there', 'their', 'and', 'was', 'has', 'had', 'have', 'but', 'wasnt', 'hasnt', 'would', 'could', 'wouldnt', 'couldnt', 'where', 'here', 'theyre', 'they', 'are', 'theyre', 'the', 'them']
+			clean(w).length > 2 and !words.include?(clean(w))
 		end
 		
 		def tag_size(tag)
