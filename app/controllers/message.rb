@@ -37,6 +37,12 @@ get '/delete' do
 end
 =end
 
+get '/post/vote/:id' do
+	message = Message.first(:id => params[:id])
+	message.update_attributes({ :vote_count => message.vote_count + 1 })
+	return true
+end
+
 get '/post/:id' do
 	@messages = [Message.first(:id => params[:id])]
 	haml :index
@@ -60,7 +66,12 @@ get '/tags/:word' do
 	haml :index
 end
 
-get '/popular' do
+get '/popular/tags' do
 	@tags = Tag.where(:total_count.gt => 1).sort(:total_count.desc).limit(100).all
 	haml :popular
+end
+
+get '/popular/posts' do
+	@messages = Message.sort(:vote_count.desc).limit(100).all
+	haml :index
 end

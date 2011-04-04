@@ -1,6 +1,7 @@
 .wrapper
-  %a{ :href => "/popular" } popular tags
-
+  %a{ :href => "/popular/posts", :class => "popular" } popular posts
+  %a{ :href => "/popular/tags", :class => "popular" } popular tags
+  
   %form{ :method => "post", :action => "/create" }
     %input{ :type => "text", :name => "body" }
     %input{ :type => "text", :name => "email" }
@@ -9,6 +10,7 @@
 - @messages.each do |message|  
   .message_block
     .actions
+      %a{ :href => "/post/vote/#{message.id}", :class => "vote notvoted" } &#9829;
       %a{ :href => "/post/#{message.id}"} link
     %span &#147;
     = message.body

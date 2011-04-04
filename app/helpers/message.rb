@@ -20,7 +20,7 @@ module Sinatra
 		end
 		
 		def is_valid(w)
-			words = ['this', 'there', 'their', 'and', 'was', 'has', 'had', 'have', 'but', 'wasnt', 'hasnt', 'would', 'could', 'wouldnt', 'couldnt', 'where', 'here', 'theyre', 'they', 'are', 'theyre', 'the', 'them', 'its', 'hadnt', 'ive']
+			words = ['this', 'there', 'their', 'and', 'was', 'has', 'had', 'have', 'but', 'wasnt', 'hasnt', 'would', 'could', 'wouldnt', 'couldnt', 'where', 'here', 'theyre', 'they', 'are', 'theyre', 'the', 'them', 'its', 'hadnt', 'ive', 'were', 'didnt', 'did']
 			clean(w).length > 2 and !words.include?(clean(w))
 		end
 		

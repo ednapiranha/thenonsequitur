@@ -10,6 +10,14 @@ body
   a
     color: $pink
     text-decoration: none
+    
+    &.popular
+      display: block
+      background-color: $pink
+      color: #eee
+      padding: 3px
+      float: left
+      margin-right: 10px
 
   h1
     color: #d7d7d7
@@ -47,13 +55,19 @@ body
       margin: 0px
       font-size: 11px
       line-height: 12px
-      background-color: $pink
-      padding: 2px
 
       a
         color: #fff
         background-color: $pink
+        padding: 2px
+        display: block
+        float: left
         font-size: 11px
+        margin-left: 2px
+        
+        &.voted
+          cursor: default
+          background-color: #ccc
     
     span
       font-size: 35px

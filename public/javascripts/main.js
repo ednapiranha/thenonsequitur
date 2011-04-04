@@ -22,4 +22,16 @@ $(function() {
 	message_field.focus();
 	
 	$('h1').click(function() { document.location.href = '/' }); 
+	
+	$('a.vote.notvoted').live('click', function(ev) { 
+	  ev.preventDefault();
+	  var self = $(this);
+	  $.get(self.attr('href'), function() {
+	    self.addClass('voted').removeClass('notvoted').text('voted!');
+	  });
+	});
+	
+	$('a.vote.voted').live('click', function(ev) {
+	  ev.preventDefault();
+	});
 });
