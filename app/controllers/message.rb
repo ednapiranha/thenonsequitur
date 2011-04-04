@@ -14,12 +14,14 @@ post '/create' do
 		body = []
 		tags = []
 		params[:body].to_s.split(/\s/).each { |w| 
-			tags << clean(w)
 			tag = Tag.first(:name => clean(w))
 			if is_valid(w)
 				tag.blank? ? Tag.create(:name => clean(w)) : tag.update_attributes({ :total_count => tag.total_count + 1 })
+				body << "<a href='/tags/#{clean(w)}'>#{soft_clean(w)}</a>"
+				tags << clean(w)
+			else
+				body << soft_clean(w)
 			end
-			is_valid(w) ? body << "<a href='/tags/#{clean(w)}'>#{soft_clean(w)}</a>" : body << soft_clean(w)
 		}.join(" ")
 
 		@message = Message.create(:body => body.join(" "), :ip => request.env['REMOTE_ADDR'], :tags => tags)
