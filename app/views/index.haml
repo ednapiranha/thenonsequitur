@@ -5,13 +5,28 @@
   %form{ :method => "post", :action => "/create" }
     %input{ :type => "text", :name => "body" }
     %input{ :type => "text", :name => "email" }
+    - if @single_view
+      %input{ :type => "hidden", :name => "parent_id", :value => params[:id] }
     %input{ :type => "submit", :value => "add" }
   
 - @messages.each do |message|  
   .message_block
     .actions
       %a{ :href => "/post/vote/#{message.id}", :class => "vote notvoted" } &#9829;
+      %a{ :href => "/post/#{message.id}?reply=true", :class => "reply" }= "reply (#{message.reply_total})"
       %a{ :href => "/post/#{message.id}"} link
     %span &#147;
     = message.body
     %span &#148;
+- if @single_view
+  .replies
+    %h2 replies
+  - @replies.each do |message|
+    .message_block
+      .actions
+        %a{ :href => "/post/vote/#{message.id}", :class => "vote notvoted" } &#9829;
+        %a{ :href => "/post/#{message.id}?reply=true", :class => "reply" }= "reply (#{message.reply_total})"
+        %a{ :href => "/post/#{message.id}"} link
+      %span &#147;
+      = message.body
+      %span &#148;

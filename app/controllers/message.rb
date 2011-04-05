@@ -23,8 +23,16 @@ post '/create' do
 				body << soft_clean(w)
 			end
 		}.join(" ")
-
+		
 		@message = Message.create(:body => body.join(" "), :ip => request.env['REMOTE_ADDR'], :tags => tags)
+		if params[:parent_id]
+			parent_message = Message.first(:id => params[:parent_id])
+			if parent_message
+				@message.update_attributes({ :parent_id => parent_message.id })
+				parent_message.update_attributes({ :vote_count => parent_message.vote_count + 1 })
+				redirect "/post/#{parent_message.id}"
+			end
+		end
 	end
 	@messages = Message.sort(:created_at.desc).limit(150).all
 	haml :index
@@ -45,6 +53,8 @@ end
 
 get '/post/:id' do
 	@messages = [Message.first(:id => params[:id])]
+	@replies = Message.where(:parent_id => params[:id]).sort(:created_at.desc).all
+	@single_view = true
 	haml :index
 end
 
