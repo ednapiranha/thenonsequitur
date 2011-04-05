@@ -38,7 +38,7 @@ $(function() {
 	$('ul').isotope({
     // options
     itemSelector : '.message_block',
-    layoutMode : 'masonry',
+    layoutMode : 'fitRows',
     animationOptions: {
       duration: 2750,
       easing: 'linear',
