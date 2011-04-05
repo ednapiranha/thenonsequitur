@@ -7,7 +7,7 @@
     %script{ :type => "text/javascript", :src => versioned_js('main') }
     %script{ :type => "text/javascript", :src => versioned_js('jquery.isotope') }
   
-  %body
+  %body{ :class => @page_type }
     %h1
       The Non Sequitur
       %span why don't you post something anonymously?

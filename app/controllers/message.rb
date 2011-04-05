@@ -77,6 +77,7 @@ get '/tags/:word' do
 end
 
 get '/popular/tags' do
+	@page_type = "tags"
 	@tags = Tag.where(:total_count.gt => 1).sort(:total_count.desc).limit(100).all
 	haml :popular
 end
