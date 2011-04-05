@@ -83,6 +83,6 @@ get '/popular/tags' do
 end
 
 get '/popular/posts' do
-	@messages = Message.where(:vote_count.gt => 1).sort(:vote_count.desc).limit(100).all
+	@messages = Message.where(:vote_count.gt => 0).sort(:vote_count.desc).limit(100).all
 	haml :index
 end
