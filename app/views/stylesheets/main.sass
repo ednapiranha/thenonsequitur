@@ -1,4 +1,4 @@
-$pink: #ba1c63
+$pink: #e0367e
 
 body
   font-family: Arial, sans-serif
@@ -11,19 +11,28 @@ body
     color: $pink
     text-decoration: none
     
+    &:hover
+      background-color: #947676
+    
     &.popular
       display: block
-      background-color: $pink
+      background-color: #222
+      margin-top: -10px
+      float: right
       color: #eee
-      padding: 3px
-      float: left
+      padding: 5px
       margin-right: 10px
+  
+  .isotope, .isotope .isotope-item
+    -webkit-transition-duration: 0.8s
+    -moz-transition-duration: 0.8s
+    transition-duration: 0.8s
 
   h1
     color: #d7d7d7
     text-indent: 5px
     font-weight: normal
-    background-color: #b3b3b3
+    background-color: #aeaeae
     margin-bottom: 5px
     font-size: 28px
     margin-top: 0px
@@ -33,46 +42,54 @@ body
     span
       font-size: 14px
       font-weight: normal
-      color: #eee
+      color: #d7d7d7
   
-  .message_block
-    line-height: 21px
-    padding: 10px
-    overflow: hidden
-    padding-top: 20px
-    border: 1px solid #ccc
-    font-size: 16px
-    display: block
-    float: left
-    position: relative
-    margin: 5px
-    max-width: 250px
-    min-width: 100px
+  ul
+    padding: 0px
+    margin: 0px
+    .message_block
+      line-height: 21px
+      padding: 15px
+      overflow: hidden
+      padding-top: 20px
+      border: 2px solid #ccc
+      border-radius: 5px
+      -moz-border-radius: 5px
+      background-color: #fff
+      font-size: 16px
+      display: block
+      float: left
+      position: relative
+      margin: 5px
+      max-width: 350px
+      min-width: 100px
     
-    .actions
-      position: absolute
-      right: 0px
-      top: 0px
-      margin: 0px
-      font-size: 11px
-      line-height: 12px
-
-      a
-        color: #fff
-        background-color: $pink
-        padding: 2px
-        display: block
-        float: left
+      .actions
+        position: absolute
+        right: 0px
+        top: 0px
+        margin: 0px
         font-size: 11px
-        margin-left: 2px
+        line-height: 12px
+
+        a
+          color: #fff
+          background-color: #3f3f3f
+          padding: 2px
+          display: block
+          float: left
+          font-size: 11px
+          margin-left: 2px
         
-        &.voted
-          cursor: default
-          background-color: #ccc
+          &.vote
+            background-color: $pink
+          &.voted
+            cursor: default
+            background-color: #ccc
     
     span
       font-size: 35px
-      color: #cfa6b7
+      color: #ccc
       font-family: Georgia, serif
       line-height: 40px
     
@@ -81,7 +98,7 @@ body
       color: #111
       
       &:hover
-        background-color: #e0367e
+        background-color: $pink
         color: #fff
   
   .wrapper
@@ -90,19 +107,19 @@ body
       input[name="body"] 
         border: 1px solid #111
         outline: none
-        margin-top: 10px
+        margin-top: 0px
         margin-bottom: 10px
-        width: 91%
+        width: 75%
         color: #9d9d9d
         font-size: 20px
-        padding: 5px 
+        padding: 4px 
       
       input[type="submit"]
         background-color: $pink
         color: #fff
         border: 0px
         font-size: 15px
-        padding: 5px
+        padding: 4px
   .replies
     display: block
     float: left
@@ -115,6 +132,7 @@ body
     h2
       font-weight: normal
       font-size: 25px
+      color: #ccc
       margin: 0px
       padding: 0px
       padding-left: 5px

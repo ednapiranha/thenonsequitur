@@ -5,11 +5,12 @@
     %meta{ "http-equiv" => "X-UA-Compatible", :content => "chrome=1" }
     %link{ :type => "text/css", :rel => "stylesheet", :href => versioned_css('main') }
     %script{ :type => "text/javascript", :src => versioned_js('main') }
+    %script{ :type => "text/javascript", :src => versioned_js('jquery.isotope') }
   
   %body
     %h1
       The Non Sequitur
-      %span why don't you post something anonymously and see if anyone cares?
+      %span why don't you post something anonymously?
     = yield
     
     :plain

@@ -34,4 +34,15 @@ $(function() {
 	$('a.vote.voted').live('click', function(ev) {
 	  ev.preventDefault();
 	});
+	
+	$('ul').isotope({
+    // options
+    itemSelector : '.message_block',
+    layoutMode : 'masonry',
+    animationOptions: {
+      duration: 2750,
+      easing: 'linear',
+      queue: false
+    }
+  });
 });

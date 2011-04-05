@@ -1,3 +1,4 @@
-- @tags.each do |tag|  
-  .message_block
-    = "<a href=/tags/#{tag.name} style='font-size: #{tag_size(tag)}px;'>#{tag.name} #{tag.total_count}</a>"
+%ul
+  - @tags.each do |tag|  
+    %li.message_block
+      = "<a href=/tags/#{tag.name} style='font-size: #{tag_size(tag)}px;'>#{tag.name} #{tag.total_count}</a>"
