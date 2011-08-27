@@ -27,22 +27,11 @@ $(function() {
 	  ev.preventDefault();
 	  var self = $(this);
 	  $.get(self.attr('href'), function() {
-	    self.addClass('voted').removeClass('notvoted').text('voted!');
+	    self.addClass('voted').removeClass('notvoted');
 	  });
 	});
 	
 	$('a.vote.voted').live('click', function(ev) {
 	  ev.preventDefault();
 	});
-	
-	$('ul').isotope({
-    // options
-    itemSelector : '.message_block',
-    layoutMode : 'fitRows',
-    animationOptions: {
-      duration: 2750,
-      easing: 'linear',
-      queue: false
-    }
-  });
 });

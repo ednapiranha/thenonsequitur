@@ -1,18 +1,13 @@
-$pink: #e0367e
+$highlight: #222
 
 body
-  font-family: Arial, sans-serif
+  font-family: Helvetica, Arial, sans-serif
   color: #111
-  padding: 0px
   margin: 0px
   background-color: #fff
-  
-  &.tags
-    background-image: url('/images/tags_back.png')
-    background-repeat: repeat-x
 
   a
-    color: $pink
+    color: $highlight
     text-decoration: none
     
     &:hover
@@ -20,54 +15,45 @@ body
     
     &.popular
       display: block
-      background-color: #222
-      margin-top: -10px
-      float: right
-      color: #eee
+      background-color: #eee
+      float: left
+      color: #222
+      font-size: 15px
       padding: 5px
       margin-right: 10px
-  
-  .isotope, .isotope .isotope-item
-    -webkit-transition-duration: 0.8s
-    -moz-transition-duration: 0.8s
-    transition-duration: 0.8s
 
-  h1
-    color: #d7d7d7
+  h1, h2
+    color: #eee
     text-indent: 5px
     font-weight: normal
-    background-color: #282828
-    opacity: 0.8
     margin-bottom: 5px
-    font-size: 28px
+    font-size: 15px
+    background-color: #222
     margin-top: 0px
+    padding: 5px
     text-transform: lowercase
     cursor: pointer
     
     span
-      font-size: 14px
+      font-size: 12px
       font-weight: normal
-      color: #d7d7d7
+      color: #444
   
   ul
     padding: 0px
     margin: 0px
     .message_block
-      line-height: 21px
       padding: 15px
       overflow: hidden
       padding-top: 20px
-      border: 2px solid #ccc
-      border-radius: 5px
-      -moz-border-radius: 5px
-      background-color: #fff
-      font-size: 16px
+      background-color: #f1f1f1
+      font-size: 15px
       display: block
       float: left
       position: relative
       margin: 5px
       max-width: 350px
-      min-width: 100px
+      min-width: 130px
     
       .actions
         position: absolute
@@ -78,50 +64,67 @@ body
         line-height: 12px
 
         a
-          color: #fff
-          background-color: #3f3f3f
+          color: #222
+          background-color: #fff
           padding: 2px
           display: block
           float: left
-          font-size: 11px
-          margin-left: 2px
+          font-size: 14px
+          margin-left: 4px
+          
+          &:hover
+            background-color: $highlight
+            color: #eee
         
           &.vote
-            background-color: $pink
+            color: #c10827
+            font-size: 20px
+            padding-left: 3px
+            padding-right: 3px
           &.voted
             cursor: default
-            background-color: #ccc
+            color: #444
+            
+            &:hover
+              background-color: #fff
     
     span
-      font-size: 35px
-      color: #ccc
+      font-size: 25px
+      color: #333
       font-family: Georgia, serif
-      line-height: 40px
+      line-height: 30px
     
     a
-      background-color: #eee
+      background-color: #fff
       color: #111
       
       &:hover
-        background-color: $pink
+        background-color: $highlight
         color: #fff
   
   .wrapper
+    min-width: 320px
     padding: 5px
+    .links
+      position: absolute
+      top: 0px
+      left: 190px
+
     form
       input[name="body"] 
-        border: 1px solid #111
+        border: 1px solid #def0f1
         outline: none
         margin-top: 0px
         margin-bottom: 10px
-        width: 75%
-        color: #9d9d9d
+        width: 85%
+        color: #111
+        background-color: #cefbff
         font-size: 20px
-        padding: 4px 
+        padding: 3px 
       
       input[type="submit"]
-        background-color: $pink
-        color: #fff
+        background-color: #1f95a0
+        color: #effeff
         border: 0px
         font-size: 15px
         padding: 4px
@@ -130,14 +133,5 @@ body
     float: left
     clear: both
     width: 100%
-    border-bottom: 2px solid #eee
     margin-top: 15px
     margin-bottom: 15px
-    
-    h2
-      font-weight: normal
-      font-size: 25px
-      color: #ccc
-      margin: 0px
-      padding: 0px
-      padding-left: 5px

@@ -1,6 +1,7 @@
 .wrapper
-  %a{ :href => "/popular/posts", :class => "popular" } popular posts
-  %a{ :href => "/popular/tags", :class => "popular" } popular tags
+  .links
+    %a{ :href => "/popular/tags", :class => "popular" } popular tags
+    %a{ :href => "/popular/posts", :class => "popular" } popular posts
   
   %form{ :method => "post", :action => "/create" }
     %input{ :type => "text", :name => "body", :autocomplete => "off" }

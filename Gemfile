@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 gem 'sinatra'
 gem 'i18n'
+gem 'bson'
 gem 'bson_ext'
 gem 'mongo_mapper'
 gem 'haml'
